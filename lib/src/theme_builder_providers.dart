@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:theme_builder/theme_builder_style.dart';
-import 'package:theme_builder/theme_builder_themes.dart';
+
+import 'theme_builder_style.dart';
+import 'theme_builder_themes.dart';
 
 abstract class ThemeBuilderProviders {
   static final selectedStyleName = StateProvider<StyleName>((ref) {

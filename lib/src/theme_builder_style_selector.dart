@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:theme_builder/theme_builder_providers.dart';
-import 'package:theme_builder/theme_builder_style.dart';
+
+import 'theme_builder_providers.dart';
+import 'theme_builder_style.dart';
 
 class ThemeBuilderStyleSelector extends ConsumerWidget {
   const ThemeBuilderStyleSelector({Key? key}) : super(key: key);

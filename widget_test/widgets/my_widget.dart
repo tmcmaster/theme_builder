@@ -28,11 +28,6 @@ class TestWidget extends StatelessWidget {
         width: double.infinity,
         child: Wrap(children: _createSchemeButtons(colorScheme)),
       ),
-      Icon(Icons.menu),
-      Icon(Icons.accessibility),
-      Icon(Icons.add_alert),
-      Icon(Icons.add_alarm),
-      Icon(Icons.remove_done_rounded),
     ]);
   }
 

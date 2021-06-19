@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:theme_builder/theme_builder_app.dart';
 
-import 'my_style.dart';
-import 'my_widget.dart';
+import 'widgets/my_style.dart';
+import 'widgets/my_widget.dart';
+import 'widgets/theme_builder_app.dart';
 
 void main() {
   return runApp(

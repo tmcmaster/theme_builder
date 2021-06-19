@@ -1,20 +1,7 @@
 library theme_builder;
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:theme_builder/theme_builder_providers.dart';
-import 'package:theme_builder/theme_builder_style.dart';
-
-class ThemeBuilder extends ConsumerWidget {
-  final Widget Function(BuildContext context, ThemeBuilderStyle style) builder;
-  ThemeBuilder({
-    Key? key,
-    required this.builder,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final style = watch(ThemeBuilderProviders.style);
-    return builder(context, style);
-  }
-}
+export 'src/theme_builder.dart';
+export 'src/theme_builder_providers.dart';
+export 'src/theme_builder_style.dart';
+export 'src/theme_builder_style_selector.dart';
+export 'src/theme_builder_themes.dart';

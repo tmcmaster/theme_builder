@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:theme_builder/theme_builder.dart';
-import 'package:theme_builder/theme_builder_providers.dart';
-import 'package:theme_builder/theme_builder_style.dart';
-import 'package:theme_builder/theme_builder_style_selector.dart';
-import 'package:theme_builder/theme_builder_themes.dart';
 
 class ThemeBuilderApp extends StatelessWidget {
   final String title;
@@ -35,9 +31,9 @@ class ThemeBuilderApp extends StatelessWidget {
             darkTheme: style.darkTheme,
             home: SafeArea(
               child: Scaffold(
-                appBar: AppBar(
-                  title: Text(title),
-                ),
+                // appBar: AppBar(
+                //   title: Text(title),
+                // ),
                 drawer: Drawer(
                   child: ThemeBuilderStyleSelector(),
                 ),
@@ -48,6 +44,15 @@ class ThemeBuilderApp extends StatelessWidget {
                     border: Border.all(color: Colors.purple),
                   ),
                   child: child,
+                ),
+                floatingActionButton: Builder(
+                  builder: (context) => FloatingActionButton(
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    // backgroundColor: Colors.green,
+                    child: Icon(Icons.colorize),
+                  ),
                 ),
               ),
             ),
