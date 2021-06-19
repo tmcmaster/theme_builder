@@ -1,13 +1,12 @@
 library theme_builder;
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/material/app.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:theme_builder/theme_builder_providers.dart';
 import 'package:theme_builder/theme_builder_style.dart';
 
 class ThemeBuilder extends ConsumerWidget {
-  final MaterialApp Function(BuildContext context, ThemeBuilderStyle style) builder;
+  final Widget Function(BuildContext context, ThemeBuilderStyle style) builder;
   ThemeBuilder({
     Key? key,
     required this.builder,
@@ -15,7 +14,7 @@ class ThemeBuilder extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final style = watch(styleProvider);
+    final style = watch(ThemeBuilderProviders.style);
     return builder(context, style);
   }
 }

@@ -2,17 +2,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:theme_builder/theme_builder_style.dart';
 import 'package:theme_builder/theme_builder_themes.dart';
 
-final selectedStyleNameProvider = StateProvider<StyleName>((ref) {
-  return ref.watch(themesProvider).getDefaultStyle().name;
-});
+abstract class ThemeBuilderProviders {
+  static final selectedStyleName = StateProvider<StyleName>((ref) {
+    return ref.watch(themes).getDefaultStyle().name;
+  });
 
-final styleNamesProvider = Provider<List<StyleName>>((ref) {
-  return ref.watch(themesProvider).getStyleNames();
-});
+  static final styleNames = Provider<List<StyleName>>((ref) {
+    return ref.watch(themes).getStyleNames();
+  });
 
-final styleProvider = Provider<ThemeBuilderStyle>((ref) {
-  final styleName = ref.watch(selectedStyleNameProvider).state;
-  return ref.watch(themesProvider).getStyle(styleName);
-});
+  static final style = Provider<ThemeBuilderStyle>((ref) {
+    final styleName = ref.watch(selectedStyleName).state;
+    return ref.watch(themes).getStyle(styleName);
+  });
 
-final themesProvider = Provider<ThemeBuilderThemes>((ref) => ThemeBuilderThemes.useDefault());
+  static final themes = Provider<ThemeBuilderThemes>((ref) => ThemeBuilderThemes.useDefault());
+}

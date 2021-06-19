@@ -7,9 +7,13 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
   flutter: ">=2.2.0"
 
+flutter:
+  uses-material-design: true
+
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons:
   flutter_riverpod:
 
 dev_dependencies:
