@@ -14,8 +14,8 @@ class ThemeBuilder extends ConsumerWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final style = watch(ThemeBuilderProviders.style);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final style = ref.watch(ThemeBuilderProviders.style);
     return builder(context, style);
   }
 }

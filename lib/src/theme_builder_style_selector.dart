@@ -8,10 +8,10 @@ class ThemeBuilderStyleSelector extends ConsumerWidget {
   const ThemeBuilderStyleSelector({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final styleNames = watch(ThemeBuilderProviders.styleNames);
-    final selectedStyleNameController = watch(ThemeBuilderProviders.selectedStyleName);
-    final selectedStyleName = selectedStyleNameController.state;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final styleNames = ref.watch(ThemeBuilderProviders.styleNames);
+    final selectedStyleNameController = ref.watch(ThemeBuilderProviders.selectedStyleName.notifier);
+    final selectedStyleName = ref.watch(ThemeBuilderProviders.selectedStyleName);
 
     return Wrap(
       children: styleNames

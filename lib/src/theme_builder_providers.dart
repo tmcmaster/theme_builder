@@ -13,7 +13,7 @@ abstract class ThemeBuilderProviders {
   });
 
   static final style = Provider<ThemeBuilderStyle>((ref) {
-    final styleName = ref.watch(selectedStyleName).state;
+    final styleName = ref.watch(selectedStyleName);
     return ref.watch(themes).getStyle(styleName);
   });
 
